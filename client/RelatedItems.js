@@ -49,7 +49,6 @@ class RelatedItems extends React.Component {
             console.log("change pages to: ", id);
             axios.get(`http://fecrelateditems-env.eba-unfwxp3i.us-east-2.elasticbeanstalk.com/items/${id}`)//the passed in itemId}})
         .then((data) => {
-            console.log(data);
             this.setState({
                 shopInformation: {
                     name: data.data[0].storeName,
@@ -181,6 +180,14 @@ class RelatedItems extends React.Component {
         })
         .catch((err) => {
             console.error("there was an error on the client side:" + err)
+        })
+
+    axios.get("http://fecrelateditems-env.eba-unfwxp3i.us-east-2.elasticbeanstalk.com/ads")
+        .then((data) => {
+            console.log(data)
+        })
+        .catch((err) => {
+            console.error("error pulling random sample data from server and database:" + err)
         })
     }
 

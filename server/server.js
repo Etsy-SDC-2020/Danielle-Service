@@ -43,6 +43,17 @@ app.get("/items/:id", (req, res) => {
     });
 });
 
+app.get("/items/ads", (req, res) => {
+    randomSample((err, results) => {
+        if (err) {
+            console.log("there was an error in the server while retrieving the random ads:" + err)
+            res.status(400).end();
+        } else {
+            res.send(results);
+        }
+    })
+})
+
 
 //helper function
 const getStoreItems = (id, callback) => {
@@ -72,7 +83,17 @@ const getStoreItems = (id, callback) => {
         console.log("there was an error:" + err)
       })
       // perform actions on the collection object
-  };
+};
+
+const randomSample = (callback) => {
+    collection.aggregate([{ $sample: {size: 10}}]).toArray()
+        .then((results) => {
+            callback(null, results)
+        })
+        .catch((err) => {
+            console.log("error return random sample from database")
+        })
+    };
 //Connection
 
 app.listen(port, () => {
