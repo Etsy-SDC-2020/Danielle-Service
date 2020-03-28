@@ -43,6 +43,58 @@ class RelatedItems extends React.Component {
                     price: ""
                 }
             ],
+            adItemInformation: [
+                {
+                    name: "",
+                    price: "",
+                    image: "https://i.etsystatic.com/20282382/d/il/ef9caa/2208564228/il_340x270.2208564228_1uzv.jpg?version=0"
+                },
+                {
+                    name: "",
+                    price: "",
+                    image: "https://i.etsystatic.com/20282382/d/il/ef9caa/2208564228/il_340x270.2208564228_1uzv.jpg?version=0"
+                },
+                {
+                    name: "",
+                    price: "",
+                    image: "https://i.etsystatic.com/20282382/d/il/ef9caa/2208564228/il_340x270.2208564228_1uzv.jpg?version=0"
+                },
+                {
+                    name: "",
+                    price: "",
+                    image: "https://i.etsystatic.com/20282382/d/il/ef9caa/2208564228/il_340x270.2208564228_1uzv.jpg?version=0"
+                },
+                {
+                    name: "",
+                    price: "",
+                    image: "https://i.etsystatic.com/20282382/d/il/ef9caa/2208564228/il_340x270.2208564228_1uzv.jpg?version=0"
+                },
+                {
+                    name: "",
+                    price: "",
+                    image: "https://i.etsystatic.com/20282382/d/il/ef9caa/2208564228/il_340x270.2208564228_1uzv.jpg?version=0"
+                },
+                {
+                    name: "",
+                    price: "",
+                    image: "https://i.etsystatic.com/20282382/d/il/ef9caa/2208564228/il_340x270.2208564228_1uzv.jpg?version=0"
+                },
+                {
+                    name: "",
+                    price: "",
+                    image: "https://i.etsystatic.com/20282382/d/il/ef9caa/2208564228/il_340x270.2208564228_1uzv.jpg?version=0"
+                },
+                {
+                    name: "",
+                    price: "",
+                    image: "https://i.etsystatic.com/20282382/d/il/ef9caa/2208564228/il_340x270.2208564228_1uzv.jpg?version=0"
+                },
+                {
+                    name: "",
+                    price: "",
+                    image: "https://i.etsystatic.com/20282382/d/il/ef9caa/2208564228/il_340x270.2208564228_1uzv.jpg?version=0"
+                }
+            ]
         };
 
         document.addEventListener('onNavigate', ({id}) => {
@@ -184,6 +236,60 @@ class RelatedItems extends React.Component {
     axios.get("http://fecrelateditems-env.eba-unfwxp3i.us-east-2.elasticbeanstalk.com/ads")
         .then((data) => {
             console.log(data)
+            this.setState({
+                adItemInformation: [
+                    {
+                        name: data.data[0].itemName,
+                        price: data.data[0].singlePrice,
+                        image: data.data[0].relatedItemImage
+                    },
+                    {
+                        name: data.data[1].itemName,
+                        price: data.data[1].singlePrice,
+                        image: data.data[1].relatedItemImage
+                    },
+                    {
+                        name: data.data[2].itemName,
+                        price: data.data[2].singlePrice,
+                        image: data.data[2].relatedItemImage
+                    },
+                    {
+                        name: data.data[3].itemName,
+                        price: data.data[3].singlePrice,
+                        image: data.data[3].relatedItemImage
+                    },
+                    {
+                        name: data.data[4].itemName,
+                        price: data.data[4].singlePrice,
+                        image: data.data[4].relatedItemImage
+                    },
+                    {
+                        name: data.data[5].itemName,
+                        price: data.data[5].singlePrice,
+                        image: data.data[5].relatedItemImage
+                    },
+                    {
+                        name: data.data[6].itemName,
+                        price: data.data[6].singlePrice,
+                        image: data.data[6].relatedItemImage
+                    },
+                    {
+                        name: data.data[7].itemName,
+                        price: data.data[7].singlePrice,
+                        image: data.data[7].relatedItemImage
+                    },
+                    {
+                        name: data.data[8].itemName,
+                        price: data.data[8].singlePrice,
+                        image: data.data[8].relatedItemImage
+                    },
+                    {
+                        name: data.data[9].itemName,
+                        price: data.data[9].singlePrice,
+                        image: data.data[9].relatedItemImage
+                    }
+                ]
+            });
         })
         .catch((err) => {
             console.error("error pulling random sample data from server and database:" + err)
@@ -387,13 +493,13 @@ class RelatedItems extends React.Component {
                     <div id={"imgBox"} className={"col"}>
                         <span className={"adOverlay"}></span>
                         <span className={"adText"}>Ad</span>
-                        <img className={"col my-3"} src={"https://i.etsystatic.com/20282382/d/il/ef9caa/2208564228/il_340x270.2208564228_1uzv.jpg?version=0"}></img>
+                        <img className={"col my-3"} src={this.state.adItemInformation.image}></img>
                         <div className={"row"}>
                                 <div className={"col"}>
                                     <div className={"col"}>
-                                        <p style={{margin: "0"}}>{this.state.itemInformation.name}</p>
+                                        <p style={{margin: "0"}}>{this.state.adItemInformation.name}</p>
                                         <span>$</span>
-                                        <span>{this.state.itemInformation.price}</span>
+                                        <span>{this.state.adItemInformation.price}</span>
                                             <div>
                                             <p className={"badge badge-pill badge-shipping"}>FREE Shipping</p>
                                             </div>
@@ -404,13 +510,13 @@ class RelatedItems extends React.Component {
                         <div id={"imgBox"} className={"col"}>
                         <span className={"adOverlay"}></span>
                         <span className={"adText"}>Ad</span>
-                        <img className={"col my-3"} src={"https://i.etsystatic.com/20282382/d/il/ef9caa/2208564228/il_340x270.2208564228_1uzv.jpg?version=0"}></img>
+                        <img className={"col my-3"} src={this.state.adItemInformation.image}></img>
                         <div className={"row"}>
                                 <div className={"col"}>
                                     <div className={"col"}>
-                                        <p style={{margin: "0"}}>{this.state.itemInformation.name}</p>
+                                        <p style={{margin: "0"}}>{this.state.adItemInformation.name}</p>
                                         <span>$</span>
-                                        <span>{this.state.itemInformation.price}</span>
+                                        <span>{this.state.adItemInformation.price}</span>
                                             <div>
                                             <p className={"badge badge-pill badge-shipping"}>FREE Shipping</p>
                                             </div>
@@ -421,13 +527,13 @@ class RelatedItems extends React.Component {
                         <div id={"imgBox"} className={"col"}>
                         <span className={"adOverlay"}></span>
                         <span className={"adText"}>Ad</span>
-                        <img className={"col my-3"} src={"https://i.etsystatic.com/20282382/d/il/ef9caa/2208564228/il_340x270.2208564228_1uzv.jpg?version=0"}></img>
+                        <img className={"col my-3"} src={this.state.adItemInformation.image}></img>
                         <div className={"row"}>
                                 <div className={"col"}>
                                     <div className={"col"}>
-                                        <p style={{margin: "0"}}>{this.state.itemInformation.name}</p>
+                                        <p style={{margin: "0"}}>{this.state.adItemInformation.name}</p>
                                         <span>$</span>
-                                        <span>{this.state.itemInformation.price}</span>
+                                        <span>{this.state.adItemInformation.price}</span>
                                             <div>
                                             <p className={"badge badge-pill badge-shipping"}>FREE Shipping</p>
                                             </div>
@@ -438,13 +544,13 @@ class RelatedItems extends React.Component {
                         <div id={"imgBox"} className={"col"}>
                         <span className={"adOverlay"}></span>
                         <span className={"adText"}>Ad</span>
-                        <img className={"col my-3"} src={"https://i.etsystatic.com/20282382/d/il/ef9caa/2208564228/il_340x270.2208564228_1uzv.jpg?version=0"}></img>
+                        <img className={"col my-3"} src={this.state.adItemInformation.image}></img>
                         <div className={"row"}>
                                 <div className={"col"}>
                                     <div className={"col"}>
-                                        <p style={{margin: "0"}}>{this.state.itemInformation.name}</p>
+                                        <p style={{margin: "0"}}>{this.state.adItemInformation.name}</p>
                                         <span>$</span>
-                                        <span>{this.state.itemInformation.price}</span>
+                                        <span>{this.state.adItemInformation.price}</span>
                                             <div>
                                             <p className={"badge badge-pill badge-shipping"}>FREE Shipping</p>
                                             </div>
@@ -455,13 +561,13 @@ class RelatedItems extends React.Component {
                         <div id={"imgBox"} className={"col"}>
                         <span className={"adOverlay"}></span>
                         <span className={"adText"}>Ad</span>
-                        <img className={"col my-3"} src={"https://i.etsystatic.com/20282382/d/il/ef9caa/2208564228/il_340x270.2208564228_1uzv.jpg?version=0"}></img>
+                        <img className={"col my-3"} src={this.state.adItemInformation.image}></img>
                         <div className={"row"}>
                                 <div className={"col"}>
                                     <div className={"col"}>
-                                        <p style={{margin: "0"}}>{this.state.itemInformation.name}</p>
+                                        <p style={{margin: "0"}}>{this.state.adItemInformation.name}</p>
                                         <span>$</span>
-                                        <span>{this.state.itemInformation.price}</span>
+                                        <span>{this.state.adItemInformation.price}</span>
                                             <div>
                                             <p className={"badge badge-pill badge-shipping"}>FREE Shipping</p>
                                             </div>
@@ -474,13 +580,13 @@ class RelatedItems extends React.Component {
                     <div id={"imgBox"} className={"col"}>
                         <span className={"adOverlay"}></span>
                         <span className={"adText"}>Ad</span>
-                        <img className={"col my-3"} src={"https://i.etsystatic.com/20282382/d/il/ef9caa/2208564228/il_340x270.2208564228_1uzv.jpg?version=0"}></img>
+                        <img className={"col my-3"} src={this.state.adItemInformation.image}></img>
                         <div className={"row"}>
                                 <div className={"col"}>
                                     <div className={"col"}>
-                                        <p style={{margin: "0"}}>{this.state.itemInformation.name}</p>
+                                        <p style={{margin: "0"}}>{this.state.adItemInformation.name}</p>
                                         <span>$</span>
-                                        <span>{this.state.itemInformation.price}</span>
+                                        <span>{this.state.adItemInformation.price}</span>
                                             <div>
                                             <p className={"badge badge-pill badge-shipping"}>FREE Shipping</p>
                                             </div>
@@ -491,13 +597,13 @@ class RelatedItems extends React.Component {
                         <div id={"imgBox"} className={"col"}>
                         <span className={"adOverlay"}></span>
                         <span className={"adText"}>Ad</span>
-                        <img className={"col my-3"} src={"https://i.etsystatic.com/20282382/d/il/ef9caa/2208564228/il_340x270.2208564228_1uzv.jpg?version=0"}></img>
+                        <img className={"col my-3"} src={this.state.adItemInformation.image}></img>
                         <div className={"row"}>
                                 <div className={"col"}>
                                     <div className={"col"}>
-                                        <p style={{margin: "0"}}>{this.state.itemInformation.name}</p>
+                                        <p style={{margin: "0"}}>{this.state.adItemInformation.name}</p>
                                         <span>$</span>
-                                        <span>{this.state.itemInformation.price}</span>
+                                        <span>{this.state.adItemInformation.price}</span>
                                             <div>
                                             <p className={"badge badge-pill badge-shipping"}>FREE Shipping</p>
                                             </div>
@@ -508,13 +614,13 @@ class RelatedItems extends React.Component {
                         <div id={"imgBox"} className={"col"}>
                         <span className={"adOverlay"}></span>
                         <span className={"adText"}>Ad</span>
-                        <img className={"col my-3"} src={"https://i.etsystatic.com/20282382/d/il/ef9caa/2208564228/il_340x270.2208564228_1uzv.jpg?version=0"}></img>
+                        <img className={"col my-3"} src={this.state.adItemInformation.image}></img>
                         <div className={"row"}>
                                 <div className={"col"}>
                                     <div className={"col"}>
-                                        <p style={{margin: "0"}}>{this.state.itemInformation.name}</p>
+                                        <p style={{margin: "0"}}>{this.state.adItemInformation.name}</p>
                                         <span>$</span>
-                                        <span>{this.state.itemInformation.price}</span>
+                                        <span>{this.state.adItemInformation.price}</span>
                                             <div>
                                             <p className={"badge badge-pill badge-shipping"}>FREE Shipping</p>
                                             </div>
@@ -525,13 +631,13 @@ class RelatedItems extends React.Component {
                         <div id={"imgBox"} className={"col"}>
                         <span className={"adOverlay"}></span>
                         <span className={"adText"}>Ad</span>
-                        <img className={"col my-3"} src={"https://i.etsystatic.com/20282382/d/il/ef9caa/2208564228/il_340x270.2208564228_1uzv.jpg?version=0"}></img>
+                        <img className={"col my-3"} src={this.state.adItemInformation.image}></img>
                         <div className={"row"}>
                                 <div className={"col"}>
                                     <div className={"col"}>
-                                        <p style={{margin: "0"}}>{this.state.itemInformation.name}</p>
+                                        <p style={{margin: "0"}}>{this.state.adItemInformation.name}</p>
                                         <span>$</span>
-                                        <span>{this.state.itemInformation.price}</span>
+                                        <span>{this.state.adItemInformation.price}</span>
                                             <div>
                                             <p className={"badge badge-pill badge-shipping"}>FREE Shipping</p>
                                             </div>
@@ -542,14 +648,14 @@ class RelatedItems extends React.Component {
                         <div id={"imgBox"} className={"col"}>
                         <span className={"adOverlay"}></span>
                         <span className={"adText"}>Ad</span>
-                        <img className={"col my-3"} src={"https://i.etsystatic.com/20282382/d/il/ef9caa/2208564228/il_340x270.2208564228_1uzv.jpg?version=0"}></img>
+                        <img className={"col my-3"} src={this.state.adItemInformation.image}></img>
                         <span></span>
                         <div className={"row"}>
                                 <div className={"col"}>
                                     <div className={"col"}>
-                                        <p style={{margin: "0"}}>{this.state.itemInformation.name}</p>
+                                        <p style={{margin: "0"}}>{this.state.adItemInformation.name}</p>
                                         <span>$</span>
-                                        <span>{this.state.itemInformation.price}</span>
+                                        <span>{this.state.adItemInformation.price}</span>
                                             <div>
                                             <p className={"badge badge-pill badge-shipping"}>FREE Shipping</p>
                                             </div>
