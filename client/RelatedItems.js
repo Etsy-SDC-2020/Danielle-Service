@@ -494,6 +494,8 @@ class RelatedItems extends React.Component {
 
                 </div>
 
+                <div className={"row d-flex justify-content-center"}>
+
                 <section className={"row"}>
                     <div className={"row"}>
                     <div id={"imgBox"} className={"col"}>
@@ -671,6 +673,7 @@ class RelatedItems extends React.Component {
                         </div>
                     </div>
                 </section>
+                </div>
             </div>
             
         )
