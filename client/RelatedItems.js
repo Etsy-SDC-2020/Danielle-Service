@@ -493,13 +493,13 @@ class RelatedItems extends React.Component {
                     <div id={"imgBox"} className={"col"}>
                         <span className={"adOverlay"}></span>
                         <span className={"adText"}>Ad</span>
-                        <img className={"col my-3"} src={this.state.adItemInformation.image}></img>
+                        <img className={"col my-3"} src={this.state.adItemInformation[0].image}></img>
                         <div className={"row"}>
                                 <div className={"col"}>
                                     <div className={"col"}>
-                                        <p style={{margin: "0"}}>{this.state.adItemInformation.name}</p>
+                                        <p style={{margin: "0"}}>{this.state.adItemInformation[0].name}</p>
                                         <span>$</span>
-                                        <span>{this.state.adItemInformation.price}</span>
+                                        <span>{this.state.adItemInformation[0].price}</span>
                                             <div>
                                             <p className={"badge badge-pill badge-shipping"}>FREE Shipping</p>
                                             </div>
@@ -510,13 +510,13 @@ class RelatedItems extends React.Component {
                         <div id={"imgBox"} className={"col"}>
                         <span className={"adOverlay"}></span>
                         <span className={"adText"}>Ad</span>
-                        <img className={"col my-3"} src={this.state.adItemInformation.image}></img>
+                        <img className={"col my-3"} src={this.state.adItemInformation[1].image}></img>
                         <div className={"row"}>
                                 <div className={"col"}>
                                     <div className={"col"}>
-                                        <p style={{margin: "0"}}>{this.state.adItemInformation.name}</p>
+                                        <p style={{margin: "0"}}>{this.state.adItemInformation[1].name}</p>
                                         <span>$</span>
-                                        <span>{this.state.adItemInformation.price}</span>
+                                        <span>{this.state.adItemInformation[1].price}</span>
                                             <div>
                                             <p className={"badge badge-pill badge-shipping"}>FREE Shipping</p>
                                             </div>
@@ -527,13 +527,13 @@ class RelatedItems extends React.Component {
                         <div id={"imgBox"} className={"col"}>
                         <span className={"adOverlay"}></span>
                         <span className={"adText"}>Ad</span>
-                        <img className={"col my-3"} src={this.state.adItemInformation.image}></img>
+                        <img className={"col my-3"} src={this.state.adItemInformation[2].image}></img>
                         <div className={"row"}>
                                 <div className={"col"}>
                                     <div className={"col"}>
-                                        <p style={{margin: "0"}}>{this.state.adItemInformation.name}</p>
+                                        <p style={{margin: "0"}}>{this.state.adItemInformation[2].name}</p>
                                         <span>$</span>
-                                        <span>{this.state.adItemInformation.price}</span>
+                                        <span>{this.state.adItemInformation[2].price}</span>
                                             <div>
                                             <p className={"badge badge-pill badge-shipping"}>FREE Shipping</p>
                                             </div>
@@ -544,13 +544,13 @@ class RelatedItems extends React.Component {
                         <div id={"imgBox"} className={"col"}>
                         <span className={"adOverlay"}></span>
                         <span className={"adText"}>Ad</span>
-                        <img className={"col my-3"} src={this.state.adItemInformation.image}></img>
+                        <img className={"col my-3"} src={this.state.adItemInformation[3].image}></img>
                         <div className={"row"}>
                                 <div className={"col"}>
                                     <div className={"col"}>
-                                        <p style={{margin: "0"}}>{this.state.adItemInformation.name}</p>
+                                        <p style={{margin: "0"}}>{this.state.adItemInformation[3].name}</p>
                                         <span>$</span>
-                                        <span>{this.state.adItemInformation.price}</span>
+                                        <span>{this.state.adItemInformation[3].price}</span>
                                             <div>
                                             <p className={"badge badge-pill badge-shipping"}>FREE Shipping</p>
                                             </div>
@@ -561,13 +561,13 @@ class RelatedItems extends React.Component {
                         <div id={"imgBox"} className={"col"}>
                         <span className={"adOverlay"}></span>
                         <span className={"adText"}>Ad</span>
-                        <img className={"col my-3"} src={this.state.adItemInformation.image}></img>
+                        <img className={"col my-3"} src={this.state.adItemInformation[4].image}></img>
                         <div className={"row"}>
                                 <div className={"col"}>
                                     <div className={"col"}>
-                                        <p style={{margin: "0"}}>{this.state.adItemInformation.name}</p>
+                                        <p style={{margin: "0"}}>{this.state.adItemInformation[4].name}</p>
                                         <span>$</span>
-                                        <span>{this.state.adItemInformation.price}</span>
+                                        <span>{this.state.adItemInformation[4].price}</span>
                                             <div>
                                             <p className={"badge badge-pill badge-shipping"}>FREE Shipping</p>
                                             </div>
@@ -580,13 +580,13 @@ class RelatedItems extends React.Component {
                     <div id={"imgBox"} className={"col"}>
                         <span className={"adOverlay"}></span>
                         <span className={"adText"}>Ad</span>
-                        <img className={"col my-3"} src={this.state.adItemInformation.image}></img>
+                        <img className={"col my-3"} src={this.state.adItemInformation[5].image}></img>
                         <div className={"row"}>
                                 <div className={"col"}>
                                     <div className={"col"}>
-                                        <p style={{margin: "0"}}>{this.state.adItemInformation.name}</p>
+                                        <p style={{margin: "0"}}>{this.state.adItemInformation[5].name}</p>
                                         <span>$</span>
-                                        <span>{this.state.adItemInformation.price}</span>
+                                        <span>{this.state.adItemInformation[5].price}</span>
                                             <div>
                                             <p className={"badge badge-pill badge-shipping"}>FREE Shipping</p>
                                             </div>
@@ -597,13 +597,13 @@ class RelatedItems extends React.Component {
                         <div id={"imgBox"} className={"col"}>
                         <span className={"adOverlay"}></span>
                         <span className={"adText"}>Ad</span>
-                        <img className={"col my-3"} src={this.state.adItemInformation.image}></img>
+                        <img className={"col my-3"} src={this.state.adItemInformation[6].image}></img>
                         <div className={"row"}>
                                 <div className={"col"}>
                                     <div className={"col"}>
-                                        <p style={{margin: "0"}}>{this.state.adItemInformation.name}</p>
+                                        <p style={{margin: "0"}}>{this.state.adItemInformation[6].name}</p>
                                         <span>$</span>
-                                        <span>{this.state.adItemInformation.price}</span>
+                                        <span>{this.state.adItemInformation[6].price}</span>
                                             <div>
                                             <p className={"badge badge-pill badge-shipping"}>FREE Shipping</p>
                                             </div>
@@ -614,13 +614,13 @@ class RelatedItems extends React.Component {
                         <div id={"imgBox"} className={"col"}>
                         <span className={"adOverlay"}></span>
                         <span className={"adText"}>Ad</span>
-                        <img className={"col my-3"} src={this.state.adItemInformation.image}></img>
+                        <img className={"col my-3"} src={this.state.adItemInformation[7].image}></img>
                         <div className={"row"}>
                                 <div className={"col"}>
                                     <div className={"col"}>
-                                        <p style={{margin: "0"}}>{this.state.adItemInformation.name}</p>
+                                        <p style={{margin: "0"}}>{this.state.adItemInformation[7].name}</p>
                                         <span>$</span>
-                                        <span>{this.state.adItemInformation.price}</span>
+                                        <span>{this.state.adItemInformation[7].price}</span>
                                             <div>
                                             <p className={"badge badge-pill badge-shipping"}>FREE Shipping</p>
                                             </div>
@@ -631,13 +631,13 @@ class RelatedItems extends React.Component {
                         <div id={"imgBox"} className={"col"}>
                         <span className={"adOverlay"}></span>
                         <span className={"adText"}>Ad</span>
-                        <img className={"col my-3"} src={this.state.adItemInformation.image}></img>
+                        <img className={"col my-3"} src={this.state.adItemInformation[8].image}></img>
                         <div className={"row"}>
                                 <div className={"col"}>
                                     <div className={"col"}>
-                                        <p style={{margin: "0"}}>{this.state.adItemInformation.name}</p>
+                                        <p style={{margin: "0"}}>{this.state.adItemInformation[8].name}</p>
                                         <span>$</span>
-                                        <span>{this.state.adItemInformation.price}</span>
+                                        <span>{this.state.adItemInformation[8].price}</span>
                                             <div>
                                             <p className={"badge badge-pill badge-shipping"}>FREE Shipping</p>
                                             </div>
@@ -648,14 +648,14 @@ class RelatedItems extends React.Component {
                         <div id={"imgBox"} className={"col"}>
                         <span className={"adOverlay"}></span>
                         <span className={"adText"}>Ad</span>
-                        <img className={"col my-3"} src={this.state.adItemInformation.image}></img>
+                        <img className={"col my-3"} src={this.state.adItemInformation[9].image}></img>
                         <span></span>
                         <div className={"row"}>
                                 <div className={"col"}>
                                     <div className={"col"}>
-                                        <p style={{margin: "0"}}>{this.state.adItemInformation.name}</p>
+                                        <p style={{margin: "0"}}>{this.state.adItemInformation[9].name}</p>
                                         <span>$</span>
-                                        <span>{this.state.adItemInformation.price}</span>
+                                        <span>{this.state.adItemInformation[9].price}</span>
                                             <div>
                                             <p className={"badge badge-pill badge-shipping"}>FREE Shipping</p>
                                             </div>
