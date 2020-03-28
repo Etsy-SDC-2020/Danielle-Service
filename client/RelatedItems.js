@@ -100,7 +100,7 @@ class RelatedItems extends React.Component {
         document.addEventListener('onNavigate', ({id}) => {
             console.log("change pages to: ", id);
             axios.get(`http://fecrelateditems-env.eba-unfwxp3i.us-east-2.elasticbeanstalk.com/items/${id}`)//the passed in itemId}})
-        .then((data) => {
+            .then((data) => {
             this.setState({
                 shopInformation: {
                     name: data.data[0].storeName,
@@ -164,6 +164,68 @@ class RelatedItems extends React.Component {
         })
             //change view based off of id
             //setState to render new item
+
+        axios.get("http://fecrelateditems-env.eba-unfwxp3i.us-east-2.elasticbeanstalk.com/ads")
+            .then((data) => {
+                console.log(data.data[0])
+                this.setState({
+                    adItemInformation: [
+                        {
+                            name: data.data[0].itemName,
+                            price: data.data[0].singlePrice,
+                            image: data.data[0].relatedItemImage
+                        },
+                        {
+                            name: data.data[1].itemName,
+                            price: data.data[1].singlePrice,
+                            image: data.data[1].relatedItemImage
+                        },
+                        {
+                            name: data.data[2].itemName,
+                            price: data.data[2].singlePrice,
+                            image: data.data[2].relatedItemImage
+                        },
+                        {
+                            name: data.data[3].itemName,
+                            price: data.data[3].singlePrice,
+                            image: data.data[3].relatedItemImage
+                        },
+                        {
+                            name: data.data[4].itemName,
+                            price: data.data[4].singlePrice,
+                            image: data.data[4].relatedItemImage
+                        },
+                        {
+                            name: data.data[5].itemName,
+                            price: data.data[5].singlePrice,
+                            image: data.data[5].relatedItemImage
+                        },
+                        {
+                            name: data.data[6].itemName,
+                            price: data.data[6].singlePrice,
+                            image: data.data[6].relatedItemImage
+                        },
+                        {
+                            name: data.data[7].itemName,
+                            price: data.data[7].singlePrice,
+                            image: data.data[7].relatedItemImage
+                        },
+                        {
+                            name: data.data[8].itemName,
+                            price: data.data[8].singlePrice,
+                            image: data.data[8].relatedItemImage
+                        },
+                        {
+                            name: data.data[9].itemName,
+                            price: data.data[9].singlePrice,
+                            image: data.data[9].relatedItemImage
+                        }
+                    ]
+                });
+            })
+            .catch((err) => {
+                console.error("error pulling random sample data from server and database:" + err)
+            })
         });
 
     }
