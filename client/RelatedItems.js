@@ -494,9 +494,16 @@ class RelatedItems extends React.Component {
 
                 </div>
 
-                <div className={"row d-flex justify-content-center"}>
 
-                <section className={"row"}>
+                <section className={"row d-flex justify-content-center"} style={{
+                    paddingBottom: "48px",
+                    paddingLeft: "30px",
+                    paddingRight: "30px",
+                    paddingTop: "24px",
+                    maxWidth: "1400px",
+                    // margin: "0 auto"
+                    marginBottom: "36px"}}>
+
                     <div className={"row"}>
                     <div id={"imgBox"} className={"col"}>
                         <span className={"adOverlay"}></span>
@@ -673,7 +680,6 @@ class RelatedItems extends React.Component {
                         </div>
                     </div>
                 </section>
-                </div>
             </div>
             
         )
