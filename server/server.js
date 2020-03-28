@@ -86,6 +86,7 @@ const getStoreItems = (id, callback) => {
 };
 
 const randomSample = (callback) => {
+    const collection = client.db("FEC").collection("relatedItems");
     collection.aggregate([{ $sample: {size: 10}}]).toArray()
         .then((results) => {
             callback(null, results)
