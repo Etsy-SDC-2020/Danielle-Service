@@ -494,6 +494,7 @@ class RelatedItems extends React.Component {
 
                 </div>
 
+                <div className={"row d-flex justify-content-center"}>
 
                 <section className={"row d-flex justify-content-center"} style={{
                     paddingBottom: "48px",
@@ -680,6 +681,7 @@ class RelatedItems extends React.Component {
                         </div>
                     </div>
                 </section>
+                </div>
             </div>
             
         )
