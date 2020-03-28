@@ -45,6 +45,76 @@ class RelatedItems extends React.Component {
             ],
         };
 
+        document.addEventListener('onNavigate', ({id}) => {
+            console.log("change pages to: ", id);
+            axios.get(`http://fecrelateditems-env.eba-unfwxp3i.us-east-2.elasticbeanstalk.com/items/${id}`)//the passed in itemId}})
+        .then((data) => {
+            console.log(data);
+            this.setState({
+                shopInformation: {
+                    name: data.data[0].storeName,
+                    totalSales: data.data[0].shopTotalSales,
+                    onEtsySince: data.data[0].shopStartYear,
+                    basedIn: data.data[0].shopCountry,
+                    logoUrl: data.data[0].shopLogo,
+                    relatedImages: [
+                        data.data[0].relatedItemImage,
+                        data.data[1].relatedItemImage,
+                        data.data[2].relatedItemImage,
+                        data.data[3].relatedItemImage,
+                        data.data[4].relatedItemImage,
+                        data.data[5].relatedItemImage,
+                        data.data[6].relatedItemImage,
+                        data.data[7].relatedItemImage,
+                        data.data[8].relatedItemImage,
+                        data.data[9].relatedItemImage,
+                        data.data[10].relatedItemImage,
+                        data.data[11].relatedItemImage,
+                        data.data[12].relatedItemImage,
+                        data.data[13].relatedItemImage,
+                        data.data[14].relatedItemImage,
+                        data.data[15].relatedItemImage,
+                        data.data[16].relatedItemImage,
+                        data.data[17].relatedItemImage,
+                        data.data[18].relatedItemImage,
+                        data.data[19].relatedItemImage,
+                    ]
+                },
+                itemInformation: [
+                    {
+                        name: data.data[12].itemName,
+                        price: data.data[12].singlePrice
+                    },
+                    {
+                        name: data.data[7].itemName,
+                        price: data.data[7].singlePrice
+                    },
+                    {
+                        name: data.data[11].itemName,
+                        price: data.data[11].singlePrice
+                    },
+                    {
+                        name: data.data[4].itemName,
+                        price: data.data[4].singlePrice
+                    },
+                    {
+                        name: data.data[18].itemName,
+                        price: data.data[18].singlePrice
+                    },
+                    {
+                        name: data.data[9].itemName,
+                        price: data.data[9].singlePrice
+                    }
+                ]
+            })
+        })
+        .catch((err) => {
+            console.error("there was an error on the client side:" + err)
+        })
+            //change view based off of id
+            //setState to render new item
+        });
+
     }
 
     componentDidMount() {
