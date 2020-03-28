@@ -235,7 +235,7 @@ class RelatedItems extends React.Component {
 
     axios.get("http://fecrelateditems-env.eba-unfwxp3i.us-east-2.elasticbeanstalk.com/ads")
         .then((data) => {
-            console.log(data)
+            console.log(data.data[0])
             this.setState({
                 adItemInformation: [
                     {
