@@ -119,7 +119,6 @@ class RelatedItems extends React.Component {
     componentDidMount() {
         axios.get(`http://fecrelateditems-env.eba-unfwxp3i.us-east-2.elasticbeanstalk.com/items/64`)//the passed in itemId}})
         .then((data) => {
-            console.log(data);
             this.setState({
                 shopInformation: {
                     name: data.data[0].storeName,

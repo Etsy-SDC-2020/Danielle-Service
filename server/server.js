@@ -43,7 +43,7 @@ app.get("/items/:id", (req, res) => {
     });
 });
 
-app.get("/items/ads", (req, res) => {
+app.get("/ads", (req, res) => {
     randomSample((err, results) => {
         if (err) {
             console.log("there was an error in the server while retrieving the random ads:" + err)
