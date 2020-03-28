@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "start": "node ./server/server.js",
-    "start-oh": "webpack -d --watch",
+    "webpack": "webpack -d --watch",
     "start-server": "nodemon server.js"
   },
   "repository": {
