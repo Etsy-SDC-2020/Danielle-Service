@@ -48,7 +48,7 @@ class RelatedItems extends React.Component {
     }
 
     componentDidMount() {
-        axios.get(`http://127.0.0.1:6969/items${64}`)//the passed in itemId}})
+        axios.get(`http://fecrelateditems-env.eba-unfwxp3i.us-east-2.elasticbeanstalk.com/${64}`)//the passed in itemId}})
         .then((data) => {
             console.log(data);
             this.setState({

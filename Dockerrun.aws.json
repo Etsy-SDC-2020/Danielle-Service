@@ -1,0 +1,11 @@
+{
+    "AWSEBDockerrunVersion": "1",
+    "Image": {
+        "Name": "jaejones0612/hratx47-fec-relateditems"
+    },
+    "Ports": [
+        {
+            "ContainerPort": "6969"
+        }
+    ]
+}

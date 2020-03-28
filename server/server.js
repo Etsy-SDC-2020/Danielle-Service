@@ -12,12 +12,27 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 
 //Middlewares being used
 app.use(cors());
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
 app.use(express.static(path.join(__dirname, '../dist')));
 app.use(express.json());
 
+//database connection
+
+client.connect()
+.then(() => {
+    console.log("successfully connected to database")
+})
+.catch((err) => {
+    console.log("error connecting to database:", err)
+})
+
 //Route Handling
 
-app.get("/items:id", (req, res) => {
+app.get("http://fecrelateditems-env.eba-unfwxp3i.us-east-2.elasticbeanstalk.com/items:id", (req, res) => {
     getStoreItems(req.params.id, (err, results) => {
         if (err) {
             console.log("there was an error in the server:" + err)
@@ -31,13 +46,6 @@ app.get("/items:id", (req, res) => {
 
 //helper function
 const getStoreItems = (id, callback) => {
-    client.connect(err => {
-  
-    if (err) {
-      console.log("error connecting to database")
-    } else {
-      console.log("connected to database!");
-      const db = client.db("FEC");
       const collection = client.db("FEC").collection("relatedItems");
       let parsedId = parseInt(id);
       collection.findOne({itemId: parsedId})
@@ -64,8 +72,6 @@ const getStoreItems = (id, callback) => {
         console.log("there was an error:" + err)
       })
       // perform actions on the collection object
-    }
-  });
   };
 //Connection
 
