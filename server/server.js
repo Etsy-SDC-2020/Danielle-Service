@@ -32,7 +32,7 @@ client.connect()
 
 //Route Handling
 
-app.get("http://fecrelateditems-env.eba-unfwxp3i.us-east-2.elasticbeanstalk.com/items:id", (req, res) => {
+app.get("http://fecrelateditems-env.eba-unfwxp3i.us-east-2.elasticbeanstalk.com/items?=id", (req, res) => {
     getStoreItems(req.params.id, (err, results) => {
         if (err) {
             console.log("there was an error in the server:" + err)
